@@ -1,0 +1,74 @@
+# 1. Simple example
+def say_hello():
+    print("Hello World!")
+say_hello()
+
+# 2. Modified text
+def say_hello():
+    print("Greetings Earthlings!")
+say_hello()
+
+# 3. Welcome message with addition
+def welcome():
+    print("Welcome to the program!")
+
+def add_numbers():
+    num1 = 5    # First integer defined in function
+    num2 = 10   # Second integer defined in function
+    result = num1 + num2
+    return result
+
+welcome()
+print("The sum is:", add_numbers())
+# Example 1: Greeting with name parameter
+def greet(name):
+    print(f"Hello, {name}! How are you today?")
+    
+greet("John")  # Output: Hello, John! How are you today?
+greet("Alice") # Output: Hello, Alice! How are you today?
+
+# Example 2: Adding two numbers with parameters
+def add_numbers(num1, num2):
+    result = num1 + num2
+    return result
+
+sum_result = add_numbers(5, 3)
+print("Sum:", sum_result)  # Output: Sum: 8
+# Example 1: Accessing a Global Variable
+global_var = 10  # Global variable
+
+def show_global():
+    print("Global variable value:", global_var)  # Can access global variable
+
+def modify_local():
+    local_var = 5    # Local variable
+    print("Local variable value:", local_var)
+
+show_global()      # Works fine
+# print(local_var) # Would cause error - local_var is not accessible here
+
+# Example 2: Using Global Variables to Share Data
+total = 0  # Global variable to share between functions
+
+def add_to_total(amount):
+    global total    # Declare using global keyword to modify
+    total += amount
+    return total
+
+print(add_to_total(5))   # Output: 5
+print(add_to_total(10))  # Output: 15
+def add(num1, num2):
+    return num1 + num2
+
+def multiply(num1, num2):
+    return num1 * num2
+
+def add_and_multiply(num1, num2, num3):
+    sum_result = add(num1, num2)          # Call add function
+    final_result = multiply(sum_result, num3)  # Call multiply with sum
+    return final_result
+
+# Test the functions
+result = add_and_multiply(2, 3, 4)
+print("Result:", result)  # Output: Result: 20
+# Explanation: (2 + 3) * 4 = 5 * 4 = 20
